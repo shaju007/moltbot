@@ -40,7 +40,7 @@
         "github-copilot/claude-sonnet-4.5": {
           "alias": "Copilot"
         },
-        "ollama/llama3": {
+        "ollama/llama3:latest": {
           "alias": "Llama3 Local"
         }
       },
