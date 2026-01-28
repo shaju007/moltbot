@@ -23,7 +23,7 @@
         "baseUrl": "http://localhost:11434",
         "models": [
           {
-            "id": "llama3:latest",
+            "id": "llama3",
             "name": "Llama 3"
           }
         ]
