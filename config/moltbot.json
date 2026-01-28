@@ -1,0 +1,115 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.1.27-beta.1",
+    "lastTouchedAt": "2026-01-28T13:36:40.533Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-01-28T13:33:27.591Z",
+    "lastRunVersion": "2026.1.27-beta.1",
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local"
+  },
+  "auth": {
+    "profiles": {
+      "github-copilot:github": {
+        "provider": "github-copilot",
+        "mode": "token"
+      }
+    }
+  },
+  "models": {
+    "providers": {
+      "ollama": {
+        "baseUrl": "http://localhost:11434",
+        "models": [
+          {
+            "id": "llama3",
+            "name": "Llama 3"
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "github-copilot/claude-sonnet-4.5",
+        "fallbacks": []
+      },
+      "models": {
+        "github-copilot/claude-sonnet-4.5": {
+          "alias": "Copilot"
+        },
+        "ollama/llama3": {
+          "alias": "Llama3 Local"
+        }
+      },
+      "workspace": "/Users/sshaju/clawd",
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "bash": true
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "session-memory": {
+          "enabled": true
+        },
+        "command-logger": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "channels": {
+    "whatsapp": {
+      "dmPolicy": "allowlist",
+      "selfChatMode": true,
+      "allowFrom": [
+        "+4917634447311"
+      ],
+      "groupPolicy": "allowlist",
+      "mediaMaxMb": 50,
+      "debounceMs": 0
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "03119736afb91fbcc0c2dfde54bda23e4cee8f7a62244aff2b968db3e3bad930"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    }
+  },
+  "skills": {
+    "install": {
+      "nodeManager": "pnpm"
+    }
+  },
+  "plugins": {
+    "entries": {
+      "whatsapp": {
+        "enabled": true
+      }
+    }
+  }
+}
